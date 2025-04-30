@@ -1,0 +1,2 @@
+1. making a gui first using pyqt5
+2. adding animation of cats desinging using chatgpt
