@@ -9,7 +9,8 @@ class CatApp:
         self.root.geometry("600x400")
 
         # List of cat images
-        self.cat_images = ["cat1.png", "cat2.png", "cat3.png", "cat4.png"]
+        self.cat_images = ["images/cat1.png", "images/cat2.png", "images/cat3.png",
+                          "images/cat4.png"]
         self.current_index = 0
 
         # Load the first image
@@ -24,7 +25,7 @@ class CatApp:
     def load_image(self):
         try:
             image = Image.open(self.cat_images[self.current_index])
-            image = image.resize((200, 200), Image.ANTIALIAS)
+            image = image.resize((200, 200), Image.Resampling.LANCZOS)  # Updated here
             self.tk_image = ImageTk.PhotoImage(image)
             self.image_label.config(image=self.tk_image)
         except Exception as e:
