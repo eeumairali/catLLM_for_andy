@@ -9,13 +9,13 @@ def list_microphones():
         if device['max_input_channels'] > 0:  # Only list input devices
             print(f"{i}: {device['name']}")
 
-def record_audio(output_file, duration, sample_rate=44100, device_index=None):
+def record_audio(output_file, duration, sample_rate=48000, device_index=None):
     print("Recording...")
     # Record audio using the specified microphone
     audio_data = sd.rec(
         int(duration * sample_rate), 
         samplerate=sample_rate, 
-        channels=2, 
+        channels=1, 
         dtype='int16', 
         device=device_index
     )
@@ -44,5 +44,5 @@ if __name__ == "__main__":
 
     # Record audio
     output_file = "computer.wav"  # Output file name
-    duration = 5  # Duration in seconds
+    duration = 10  # Duration in seconds
     record_audio(output_file, duration, device_index=device_index)
