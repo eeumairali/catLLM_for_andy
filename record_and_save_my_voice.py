@@ -24,7 +24,7 @@ def record_audio(output_file, duration, sample_rate=48000, device_index=None):
 
     # Save the audio to a WAV file
     with wave.open(output_file, 'wb') as wf:
-        wf.setnchannels(2)  # Stereo
+        wf.setnchannels(1)  # Stereo
         wf.setsampwidth(2)  # 16-bit audio
         wf.setframerate(sample_rate)
         wf.writeframes(audio_data.tobytes())
@@ -44,5 +44,5 @@ if __name__ == "__main__":
 
     # Record audio
     output_file = "computer.wav"  # Output file name
-    duration = 10  # Duration in seconds
+    duration = 5  # Duration in seconds
     record_audio(output_file, duration, device_index=device_index)
