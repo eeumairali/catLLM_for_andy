@@ -14,10 +14,9 @@ class MainApplication:
         
         # Current LLM model - initialize before other components
         self.current_model = "gemma3"  # Default model
-        self.available_models = ["gemma3", "llama3", "mistral", "phi3"]
+        self.available_models = ["llama3", "gemma3", "mistral", "phi3"]
         
-        # Initialize components
-        self.audio_manager = AudioManager()
+        # Initialize components       self.audio_manager = AudioManager()
         self.text_processor = TextProcessor()
         self.cat_animation = CatAnimation(self.root)
         
@@ -123,7 +122,7 @@ class MainApplication:
                 tk.messagebox.showerror("Error", "Please select a microphone")
         
         select_button = tk.Button(microphone_dialog, text="Select", command=select_mic, 
-                                 font=("Arial", 12), bg="#4CAF50", fg="white")
+                                 font=("Arial", 12), bg="#4CAF50", fg="blue")
         select_button.pack(pady=10)
     
     def start_recording_thread(self, device_index):
