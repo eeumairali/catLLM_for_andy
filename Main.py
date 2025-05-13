@@ -71,15 +71,15 @@ class MainApplication:
         
         # Buttons
         self.record_button = tk.Button(button_frame, text="Record Voice", command=self.record_audio, 
-                                     width=15, font=("Arial", 12), bg="#4CAF50", fg="white")
+                                     width=15, font=("Arial", 12), bg="#4CAF50", fg="blue")
         self.record_button.pack(side=tk.LEFT, padx=5)
         
         self.send_button = tk.Button(button_frame, text="Send Text", command=self.process_text_input, 
-                                    width=15, font=("Arial", 12), bg="#2196F3", fg="white")
+                                    width=15, font=("Arial", 12), bg="#2196F3", fg="blue")
         self.send_button.pack(side=tk.LEFT, padx=5)
         
         self.clear_button = tk.Button(button_frame, text="Clear Chat", command=self.clear_conversation, 
-                                     width=15, font=("Arial", 12), bg="#f44336", fg="white")
+                                     width=15, font=("Arial", 12), bg="#f44336", fg="blue")
         self.clear_button.pack(side=tk.LEFT, padx=5)
     
     def append_to_conversation(self, text, is_user=True):
