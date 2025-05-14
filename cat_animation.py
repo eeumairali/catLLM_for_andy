@@ -10,8 +10,8 @@ class CatAnimation:
         self.image_paths = {
             "gemma3": "images/cat1.png",
             "llama3": "images/cat2.png",
-            "mistral": "images/cat3.png",
-            "phi3": "images/cat4.png"
+            "qwen3:0.6b": "images/cat3.png",
+            "deepseek-r1:1.5b": "images/cat4.png",
         }
         
         # Ensure the images directory exists

@@ -14,7 +14,7 @@ class MainApplication:
         
         # Current LLM model - initialize before other components
         self.current_model = "gemma3"  # Default model
-        self.available_models = ["llama3", "gemma3", "mistral", "phi3"]
+        self.available_models = [ "deepseek-r1:1.5b" "llama3", "qwen3:0.6b", "gemma3"]
         
         # Initialize components       self.audio_manager = AudioManager()
         self.text_processor = TextProcessor()
