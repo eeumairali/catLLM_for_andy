@@ -14,9 +14,10 @@ class MainApplication:
         
         # Current LLM model - initialize before other components
         self.current_model = "gemma3"  # Default model
-        self.available_models = [ "deepseek-r1:1.5b" ,"llama3", "qwen3:0.6b", "gemma3"]
+        self.available_models = [ "deepseek-r1:1.5b" ,"llama3.2:1b", "qwen3:0.6b", "gemma3"]
         
-        # Initialize components       self.audio_manager = AudioManager()
+        # Initialize components       
+        self.audio_manager = AudioManager()
         self.text_processor = TextProcessor()
         self.cat_animation = CatAnimation(self.root)
         
@@ -142,7 +143,15 @@ class MainApplication:
             self.input_text.insert("1.0", text)
             self.process_text_input()
         else:
-            tk.messagebox.showinfo("Info", "Could not recognize speech. Please try again.")
+            # show meesage in anohter window
+            new_window = tk.Toplevel(self.root)
+            new_window.title("Error")
+            new_window.geometry("300x100")
+            error_label = tk.Label(new_window, text="Could not understand the audio.", font=("Arial", 12))
+            error_label.pack(pady=20)
+            ok_button = tk.Button(new_window, text="OK", command=new_window.destroy, font=("Arial", 12), bg="#f44336", fg="blue")
+            ok_button.pack(pady=10)
+        # Close the recording dialog
         
         # Re-enable the record button
         self.record_button.config(state=tk.NORMAL, text="Record Voice")

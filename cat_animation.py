@@ -9,7 +9,7 @@ class CatAnimation:
         # Create image paths
         self.image_paths = {
             "gemma3": "images/cat1.png",
-            "llama3": "images/cat2.png",
+            "llama3.2:1b": "images/cat2.png",
             "qwen3:0.6b": "images/cat3.png",
             "deepseek-r1:1.5b": "images/cat4.png",
         }
