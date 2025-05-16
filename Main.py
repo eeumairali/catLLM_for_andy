@@ -185,7 +185,7 @@ class MainApplication:
         self.cat_animation.change_cat_image(self.current_model)
         
         # Speak the response
-        self.text_processor.speak(response, f"response_{self.current_model}.mp3")
+        self.text_processor.speak(response, f"response_{self.current_model.replace(':','_')}.mp3")
     
     def change_model(self, selection):
         self.current_model = selection
